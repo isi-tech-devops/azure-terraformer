@@ -2,11 +2,8 @@
 # name     = "rg-terraform"
 # location = var.location
 # }
-resource "random_string" "main" {
-  # length           = 8
-  upper   = false
-  special = false
-}
+
+
 data "azurerm_resource_group" "example" {
   name = "NDDNRCNBISHFXCcDevCorersg"
 }
