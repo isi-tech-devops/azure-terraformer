@@ -1,1 +1,1 @@
-location = "West US"
+location = "Canada Central"
