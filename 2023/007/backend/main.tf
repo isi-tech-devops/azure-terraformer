@@ -7,6 +7,11 @@ resource random_string main {
   upper            = false
   special          = false
 }
+data "azurerm_resource_group" "example" {
+  name = "NDDNRCNBISHFXCcDevCorersg"
+}
+
+
 resource azurerm_storage_account main {
   name                     = "Accumulotrst"
   resource_group_name      = azurerm_resource_group.main.name
@@ -18,4 +23,8 @@ resource azurerm_storage_container tfstate {
   name                  = "tfstate"
   storage_account_name  = azurerm_storage_account.main.name
   container_access_type = "private"
+}
+
+output "id" {
+  value = data.azurerm_resource_group.example.id
 }
